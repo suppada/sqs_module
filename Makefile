@@ -2,19 +2,9 @@ SHELL:=/bin/bash
 
 all: help
 
-# Add the following 'help' target to your Makefile
-# And add help text after each target name starting with '\#\#'
-
-#VARS = terraform.tfvars
-# -var-file="$(VARS)" \
-
 get:
 	@echo "Updating modules"
 	@terraform get -update
-
-# init:
-# 	@echo "Init the terraform"
-# 	@ terraform init
 
 plan:
 	@echo "Checking Infrastracture"
@@ -35,11 +25,6 @@ validate:
 	@terraform validate
 
 apply:
-    
-	@echo "Format existing code"
-	@terraform fmt \
-		-write=true \
-		-recursive
 	@echo "Init the terraform"
 	@terraform init
 	@echo "Applying changes to Infrastracture"
