@@ -35,7 +35,8 @@ validate:
 	@terraform validate
 
 apply:
-    @echo "Format existing code"
+    
+	@echo "Format existing code"
 	@terraform fmt \
 		-write=true \
 		-recursive
