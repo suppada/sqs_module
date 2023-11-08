@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters {
         string(name: 'BRANCH', defaultValue: 'main', description: 'Git Branch Name')
-        choice(name: 'MAKE', choices: ['apply', 'destroy', 'fmt', 'validate',], description: 'AWS Account ID')
+        choice(name: 'MAKE', choices: ['init', 'apply', 'destroy', 'fmt', 'validate',], description: 'AWS Account ID')
     }
     options {
         timestamps()
