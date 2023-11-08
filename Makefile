@@ -35,6 +35,8 @@ apply:
 		--auto-approve
 
 destroy:
+	@echo "Init the terraform"
+	@terraform init
 	@echo "destroying existing Infrastracture"
 	@terraform destroy \
 		-lock=true \
