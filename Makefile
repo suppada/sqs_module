@@ -12,9 +12,9 @@ get:
 	@echo "Updating modules"
 	@terraform get -update
 
-init:
-	@echo "Init the terraform"
-	@ terraform init
+# init:
+# 	@echo "Init the terraform"
+# 	@ terraform init
 
 plan:
 	@echo "Checking Infrastracture"
@@ -35,8 +35,13 @@ validate:
 	@terraform validate
 
 apply:
+    @echo "Format existing code"
+	@terraform fmt \
+		-write=true \
+		-recursive
+	@echo "Init the terraform"
+	@terraform init
 	@echo "Applying changes to Infrastracture"
-	@ terraform init
 	@terraform apply \
 		-lock=true \
 		-input=false \
