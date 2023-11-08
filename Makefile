@@ -36,6 +36,7 @@ validate:
 
 apply:
 	@echo "Applying changes to Infrastracture"
+	@ terraform init
 	@terraform apply \
 		-lock=true \
 		-input=false \
